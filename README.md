@@ -9,7 +9,7 @@ SQL practice
 
 # LESSON 7: OUTER JOINs
 
-```
+```SQL
 SELECT column, another_column, …
 FROM mytable
 INNER/LEFT/RIGHT/FULL JOIN another_table
@@ -45,9 +45,56 @@ LEFT JOIN Employees
 
 
 
+# LESSON 8: A short note on NULLs
 
+```SQL
+SELECT column, another_column, …
+FROM mytable
+WHERE column IS/IS NOT NULL
+AND/OR another_condition
+AND/OR …;
+```
 
+## Lab Answers:
+1.Find the name and role of all employees who have not been assigned to a building ✓
 
+```SQL
+SELECT Role, Name FROM Employees
+WHERE Building IS NULL
+```
 
+2.Find the names of the buildings that hold no employees
 
+```SQL
+SELECT * FROM Buildings
+LEFT JOIN Employees 
+ON Buildings.Building_name = Employees.Building
+WHERE name IS NULL
+```
 
+# LESSON 9: Queries with expressions
+
+```SQL
+SELECT column AS better_column_name, …
+FROM a_long_widgets_table_name AS mywidgets
+INNER JOIN widget_sales
+  ON mywidgets.id = widget_sales.widget_id;
+```
+
+```SQL
+SELECT particle_speed / 2.0 AS half_particle_speed
+FROM physics_data
+WHERE ABS(particle_position) * 10.0 > 500;
+```
+
+## Lab Answers:
+
+1.
+```SQL
+
+```
+
+2.
+```SQL
+
+```
