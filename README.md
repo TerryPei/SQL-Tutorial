@@ -29,13 +29,13 @@ LEFT JOIN Buildings on Buildings.Building_name = Employees.Building
 
 2.Find the list of all buildings and their capacity
 
-```
+```SQL
 SELECT * FROM Buildings
 ```
 
 3.List all buildings and the distinct employee roles in each building (including empty buildings)
 
-```
+```SQL
 SELECT DISTINCT building_name, role
 FROM Buildings 
 LEFT JOIN Employees
