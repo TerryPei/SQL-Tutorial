@@ -358,4 +358,79 @@ DELETE FROM movies
 WHERE director = "Andrew Stanton"
 ```
 
+# Lesson 16 Creating tables
 
+```SQL
+CREATE TABLE IF NOT EXISTS mytable (
+    column DataType TableConstraint DEFAULT default_value,
+    another_column DataType TableConstraint DEFAULT default_value,
+    …
+);
+```
+
+```SQL
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY,
+    title TEXT,
+    director TEXT,
+    year INTEGER, 
+    length_minutes INTEGER
+);
+```
+## Lab 16
+
+Create a new table named Database with the following columns:
+- Name A string (text) describing the name of the database
+– Version A number (floating point) of the latest version of this database
+– Download_count An integer count of the number of times this database was downloaded
+
+```SQL
+CREATE  Table Database (
+    Name TEXT, 
+    Version FLOAT,
+    Download_count INTEGER
+)
+```
+
+# Lesson 17 Altering tables
+
+```SQL
+ALTER TABLE mytable
+ADD column DataType OptionalTableConstraint 
+    DEFAULT default_value;
+```
+
+```SQL
+ALTER TABLE mytable
+DROP column_to_be_deleted;
+```
+
+```SQL
+ALTER TABLE mytable
+RENAME TO new_table_name;
+```
+
+## Lab 17 
+
+1. Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
+```SQL
+ALTER TABLE Movies
+ADD Aspect_ratio FLOAT
+```
+2. Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English.
+```
+ALTER TABLE Movies
+ADD Language Text DEFAULT "English"
+```
+
+# Lesson 18 Dropping tables
+
+## Lab 18
+
+```SQL
+DROP TABLE IF EXISTS Movies
+```
+
+```SQL
+DROP TABLE IF EXISTS BoxOffice
+```
